@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Hero from "./components/hero"
 import About from "./components/About"
+import Stack from './components/stack'
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('home')
@@ -23,6 +24,16 @@ export default function Home() {
             transition={{ duration: 0.4 }}
           >
             <About />
+          </motion.div>
+        )}
+        {activeSection === 'stack' && (
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Stack />
           </motion.div>
         )}
       </AnimatePresence>
