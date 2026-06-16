@@ -43,26 +43,88 @@ export const cvData = {
   ],
   projects: [
     {
+      name: "Tikeo (ft_transcendence)",
+      category: "Fullstack",
+      tags: ["NestJS", "React", "PostgreSQL", "Docker", "WebSockets"],
+      description: "Plateforme de support client en temps réel avec workflows basés sur les rôles.",
+      url: "https://github.com/Iriana022/ft_"
+    },
+    {
       name: "Inception(42)",
-      description: "Orchestration d'infrastructure virtualisée avec Docker Compose, Nginx (TLS) et MariaDB sous Alpine Linux."
+      category: "DevOps",
+      tags: ["Docker", "Docker Compose", "Nginx", "MariaDB", "Alpine Linux"],
+      description: "Orchestration d'infrastructure virtualisée sécurisée avec certificats TLS.",
+      url: "#"
     },
     {
       name: "ft_irc(42)",
-      description: "Développement d'un serveur de messagerie instantanée en C++ utilisant le protocole IRC et la gestion de sockets non-bloquants."
+      category: "Infrastructure",
+      tags: ["C++", "Protocoles Réseaux", "Sockets"],
+      description: "Développement d'un serveur IRC avec gestion de sockets non-bloquants.",
+      url: "#"
     },
     {
-      name: "ft_transcendence(42)",
-      description: "Plateforme de tickets en temps réel (NestJS/React) avec WebSockets, authentification OAuth2 et dashboards de données."
+      name: "Simulation Ferme IOT",
+      category: "DevOps",
+      tags: ["Docker", "Python", "MQTT", "InfluxDB", "Grafana"],
+      description: "Architecture de monitoring temps réel pour capteurs IOT.",
+      url: "https://github.com/Iriana022/Frme-iot-simumator"
     },
     {
-      name: "Gestion de Suivi de Ferme",
-      description: "Conception et développement d'une Single Page Application (SPA) pour la gestion de données de la ferme.",
+      name: "Monitoring LaFirme",
+      category: "DevOps",
+      tags: ["Docker", "Uptime Kuma", "Maintenance"],
+      description: "Remplacement du système de monitoring pour infrastructures Joomla.",
+      url: "http://184.168.20.146:3001/"
+    },
+    {
+      name: "Nest Blog",
+      category: "Fullstack",
+      tags: ["NestJS", "React", "Vercel", "CI/CD"],
+      description: "Projet pédagogique NextJS/NestJS avec pipeline de déploiement automatisé.",
+      url: "https://nestblog-drab.vercel.app/"
+    },
+    {
+      name: "Gestion Suivi Ferme",
+      category: "Fullstack",
+      tags: ["React", "SPA", "Neon"],
+      description: "Conception d'une Single Page Application pour la gestion de données.",
       url: "https://iriana022.github.io/react-farm-management/"
     },
     {
-      name: "Landing Page 'Novexa'",
-      description: "Démonstration de l'intégration pixel-perfect, du Responsive Design et de l'interactivité JavaScript.",
+      name: "Aqua Pure",
+      category: "Web",
+      tags: ["WordPress", "PHP", "Elementor"],
+      description: "Maintenance continue et refonte design d'un site e-commerce.",
+      url: "https://aqua-pure.mg/"
+    },
+    {
+      name: "Koota (SaaS)",
+      category: "Web",
+      tags: ["WordPress", "PHP", "ACF"],
+      description: "Collaboration sur l'intégration d'un SaaS WordPress.",
+      url: "https://apps.koota.app/log-in/"
+    },
+    {
+      name: "Zibo Restaurant Theme",
+      category: "Web",
+      tags: ["Webpack", "SCSS", "PHP"],
+      description: "Développement d'un thème WordPress personnalisé from scratch.",
+      url: "https://github.com/Iriana022/zibowpthemes"
+    },
+    {
+      name: "Novexa LP",
+      category: "Web",
+      tags: ["HTML/CSS", "JavaScript"],
+      description: "Landing page statique avec intégration pixel-perfect.",
       url: "https://iriana022.github.io/novexa-lp/"
+    },
+    {
+      name: "NetPractice(42)",
+      category: "Infrastructure",
+      tags: ["Réseau", "IP", "Gateway"],
+      description: "Apprentissage des bases de l'adressage IP et routage réseau.",
+      url: "#"
     }
   ],
   education: [
