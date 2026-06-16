@@ -5,6 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cvData } from "@/data/cvData";
 import ProjectDetail from "./ProjectDetail";
 
+interface Project {
+  name: string;
+  category: string;
+  tags: string[];
+  description: string;
+  details: string;
+  challenges: string[];
+  benefits: string;
+  url: string;
+}
+
 export default function Projects() {
   const [filter, setFilter] = useState("Tous");
   const [selectedProject, setSelectedProject] = useState(null);
