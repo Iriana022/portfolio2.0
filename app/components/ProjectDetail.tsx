@@ -1,7 +1,18 @@
 'use client'
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function ProjectDetail({ project, onClose }: { project: any, onClose: () => void }) {
+interface Project {
+  name: string;
+  category: string;
+  tags: string[];
+  description: string;
+  details: string;
+  challenges: string[];
+  benefits: string;
+  url: string;
+}
+
+export default function ProjectDetail({ project, onClose }: { project: Project | null, onClose: () => void }) {
   if (!project) return null;
 
   return (

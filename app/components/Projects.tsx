@@ -18,7 +18,7 @@ interface Project {
 
 export default function Projects() {
   const [filter, setFilter] = useState("Tous");
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // Extraire les catégories uniques dynamiquement
   const categories = ["Tous", ...Array.from(new Set(cvData.projects.map(p => p.category)))];
@@ -60,7 +60,7 @@ export default function Projects() {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full"
       >
         <AnimatePresence mode="popLayout">
-          {filteredProjects.map((project, idx) => (
+          {filteredProjects.map((project: Project, idx) => (
             <motion.div 
               key={project.name}
               layout
