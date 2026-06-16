@@ -7,6 +7,7 @@ import Hero from "./hero"
 import About from "./About"
 import Stack from './stack'
 import Projects from './Projects'
+import Contact from './Contact'
 
 export default function PortfolioContent() {
   const [activeSection, setActiveSection] = useState('home')
@@ -31,6 +32,12 @@ export default function PortfolioContent() {
         {activeSection === 'projects' && (
           <motion.div key="projects" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.4 }}>
             <Projects />
+          </motion.div>
+        )}
+
+        {activeSection === 'contact' && (
+          <motion.div key="contact" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4 }}>
+            <Contact />
           </motion.div>
         )}
       </AnimatePresence>
