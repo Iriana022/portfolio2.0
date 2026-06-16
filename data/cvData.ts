@@ -13,11 +13,11 @@ export const cvData = {
     summary: "Développeur passionné avec 9 années d'expérience en conception et déploiement d'applications Web performantes. Fort d'une formation axée sur le projet (42), j'excelle dans la transformation d'exigences complexes en solutions architecturales claires. Spécialiste de la maintenance et de l'optimisation de systèmes legacy en environnement de production."
   },
   hard_skills: {
-    languages_runtimes: ["PHP", "JavaScript (ES6+)", "HTML5", "CSS3/SASS"],
-    frameworks_libraries: ["React.js", "Redux Toolkit", "Next.js", "NestJS", "Vue.js", "Vite"],
-    devops_infrastructure: ["Docker", "Docker Compose", "Linux (CentOS/Debian/Ubuntu)", "Bash Scripting", "Gestion de serveurs cPanel"],
-    databases_cms: ["MariaDB/MySQL", "Joomla", "WordPress", "VirtueMart"],
-    tools_methods: ["Git", "API RESTful", "JWT", "Webpack", "Responsive Design", "Sécurité Web (SSL/HTTPS)"]
+    languages_runtimes: ["PHP", "JavaScript (ES6+)", "HTML5", "CSS3/SASS", "C++", "Python"],
+    frameworks_libraries: ["React.js", "Redux Toolkit", "Next.js", "NestJS", "Vue.js", "Vite", "Bootstrap"],
+    devops_infrastructure: ["Docker", "Docker Compose", "Linux (CentOS/Debian/Ubuntu)", "Bash Scripting", "CI/CD", "MQTT Broker", "Grafana"],
+    databases_cms: ["MariaDB/MySQL", "PostgreSQL", "InfluxDB", "Joomla", "WordPress", "VirtueMart"],
+    tools_methods: ["Git", "API RESTful", "WebSockets", "JWT", "Webpack", "Responsive Design", "Sécurité Web (SSL/HTTPS)"]
   },
   soft_skills: [
     "Rigueur et sens du détail",
@@ -46,84 +46,120 @@ export const cvData = {
       name: "Tikeo (ft_transcendence)",
       category: "Fullstack",
       tags: ["NestJS", "React", "PostgreSQL", "Docker", "WebSockets"],
-      description: "Plateforme de support client en temps réel avec workflows basés sur les rôles.",
+      description: "Plateforme de support client en temps réel.",
+      details: "Développement d'une SPA de support client basée sur les rôles pour le projet 42.",
+      challenges: ["Gestion de la latence WebSockets", "Architecture RBAC complexe", "Optimisation Prisma ORM"],
+      benefits: "Gestion collaborative et traçabilité immédiate des tickets de support.",
       url: "https://github.com/Iriana022/ft_"
     },
     {
       name: "Inception(42)",
       category: "DevOps",
-      tags: ["Docker", "Docker Compose", "Nginx", "MariaDB", "Alpine Linux"],
-      description: "Orchestration d'infrastructure virtualisée sécurisée avec certificats TLS.",
+      tags: ["Docker", "Nginx", "MariaDB", "Alpine"],
+      description: "Infrastructure virtualisée sécurisée.",
+      details: "Orchestration d'une infrastructure système complète en conteneurs.",
+      challenges: ["Isolation réseau", "Configuration TLS/SSL", "Persistance des volumes"],
+      benefits: "Environnement de production robuste et reproductible.",
       url: "#"
     },
     {
       name: "ft_irc(42)",
       category: "Infrastructure",
-      tags: ["C++", "Protocoles Réseaux", "Sockets"],
-      description: "Développement d'un serveur IRC avec gestion de sockets non-bloquants.",
+      tags: ["C++", "Sockets", "Protocole IRC"],
+      description: "Serveur de messagerie temps réel.",
+      details: "Implémentation d'un serveur IRC conforme au RFC, gérant les connexions simultanées.",
+      challenges: ["Gestion des sockets non-bloquants", "Parsing de protocole complexe"],
+      benefits: "Maîtrise profonde de la programmation système et des flux réseaux.",
       url: "#"
     },
     {
       name: "Simulation Ferme IOT",
       category: "DevOps",
       tags: ["Docker", "Python", "MQTT", "InfluxDB", "Grafana"],
-      description: "Architecture de monitoring temps réel pour capteurs IOT.",
+      description: "Monitoring IOT temps réel.",
+      details: "Collecte et visualisation de données de capteurs agricoles via un broker MQTT.",
+      challenges: ["Gestion de flux de données continus", "Architecture de stockage time-series"],
+      benefits: "Prise de décision basée sur des données précises et graphiques.",
       url: "https://github.com/Iriana022/Frme-iot-simumator"
     },
     {
       name: "Monitoring LaFirme",
       category: "DevOps",
-      tags: ["Docker", "Uptime Kuma", "Maintenance"],
-      description: "Remplacement du système de monitoring pour infrastructures Joomla.",
+      tags: ["Docker", "Uptime Kuma"],
+      description: "Réduction des coûts de monitoring.",
+      details: "Migration d'un système payant vers une solution self-hosted (Uptime Kuma).",
+      challenges: ["Maintenance sans interruption de service"],
+      benefits: "Réduction totale des coûts de licence et autonomie accrue.",
       url: "http://184.168.20.146:3001/"
     },
     {
       name: "Nest Blog",
       category: "Fullstack",
-      tags: ["NestJS", "React", "Vercel", "CI/CD"],
-      description: "Projet pédagogique NextJS/NestJS avec pipeline de déploiement automatisé.",
+      tags: ["NestJS", "React", "CI/CD"],
+      description: "Pipeline de déploiement automatisé.",
+      details: "Projet pédagogique NextJS/NestJS incluant un pipeline complet.",
+      challenges: ["Configuration des runners CI/CD", "Optimisation des builds Vercel"],
+      benefits: "Workflow de déploiement moderne et professionnel.",
       url: "https://nestblog-drab.vercel.app/"
     },
     {
       name: "Gestion Suivi Ferme",
       category: "Fullstack",
       tags: ["React", "SPA", "Neon"],
-      description: "Conception d'une Single Page Application pour la gestion de données.",
+      description: "SPA pour gestion de données agricoles.",
+      details: "Interface de suivi optimisée pour la gestion opérationnelle de fermes.",
+      challenges: ["Performance de rendu de larges datasets", "Architecture client-serveur"],
+      benefits: "Digitalisation des processus manuels.",
       url: "https://iriana022.github.io/react-farm-management/"
     },
     {
       name: "Aqua Pure",
       category: "Web",
-      tags: ["WordPress", "PHP", "Elementor"],
-      description: "Maintenance continue et refonte design d'un site e-commerce.",
+      tags: ["WordPress", "Elementor"],
+      description: "Refonte e-commerce.",
+      details: "Optimisation de l'expérience utilisateur et refonte graphique.",
+      challenges: ["Performance de chargement", "Compatibilité mobile"],
+      benefits: "Amélioration significative du taux de conversion.",
       url: "https://aqua-pure.mg/"
     },
     {
       name: "Koota (SaaS)",
       category: "Web",
       tags: ["WordPress", "PHP", "ACF"],
-      description: "Collaboration sur l'intégration d'un SaaS WordPress.",
+      description: "Collaboration intégration SaaS.",
+      details: "Développement d'outils personnalisés via Advanced Custom Fields.",
+      challenges: ["Flexibilité de l'interface admin", "Gestion des permissions utilisateurs"],
+      benefits: "Solution SaaS robuste pour la gestion client.",
       url: "https://apps.koota.app/log-in/"
     },
     {
       name: "Zibo Restaurant Theme",
       category: "Web",
       tags: ["Webpack", "SCSS", "PHP"],
-      description: "Développement d'un thème WordPress personnalisé from scratch.",
+      description: "Thème WordPress sur-mesure.",
+      details: "Création d'un thème from-scratch optimisé pour la performance.",
+      challenges: ["Asset bundling avec Webpack", "Respect des standards WordPress"],
+      benefits: "Temps de chargement réduit et liberté de design totale.",
       url: "https://github.com/Iriana022/zibowpthemes"
     },
     {
       name: "Novexa LP",
       category: "Web",
       tags: ["HTML/CSS", "JavaScript"],
-      description: "Landing page statique avec intégration pixel-perfect.",
+      description: "Landing page pixel-perfect.",
+      details: "Intégration rigoureuse d'un design fidèle à la maquette.",
+      challenges: ["Responsivité parfaite sur tous devices"],
+      benefits: "Excellente première impression pour le client.",
       url: "https://iriana022.github.io/novexa-lp/"
     },
     {
       name: "NetPractice(42)",
       category: "Infrastructure",
-      tags: ["Réseau", "IP", "Gateway"],
-      description: "Apprentissage des bases de l'adressage IP et routage réseau.",
+      tags: ["Réseau", "IP", "Routage"],
+      description: "Apprentissage réseaux.",
+      details: "Simulations de configuration de routeurs et adressage réseau.",
+      challenges: ["Compréhension des couches OSI"],
+      benefits: "Base solide pour la gestion d'infrastructures réseaux.",
       url: "#"
     }
   ],

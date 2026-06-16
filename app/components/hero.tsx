@@ -16,13 +16,14 @@ export default function Hero({ activeSection, setActiveSection }: { activeSectio
     <div className="bg-gray-900">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8">
-          <div className="flex lg:flex-1">
-            <button onClick={() => setActiveSection('home')} className="flex items-center gap-2">
-              <svg width="180" height="40" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="30" fontFamily="monospace" fontSize="28" fontWeight="bold" fill="#ffffff">IRIANA R.</text>
-              </svg>
-            </button>
-          </div>
+          <button onClick={() => setActiveSection('home')} className="flex items-center gap-2 group">
+          <svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="30" fontFamily="monospace" fontSize="28" fontWeight="bold" fill="#ffffff">IRIANA R.</text>
+            {/* Ton double pipe est de retour ici */}
+            <rect x="180" y="10" width="8" height="22" className="fill-blue-500" />
+            <rect x="194" y="10" width="8" height="22" className="fill-blue-500" />
+          </svg>
+        </button>
 
           {/* Bouton Menu Mobile (visible uniquement sur mobile) */}
           <div className="flex lg:hidden">

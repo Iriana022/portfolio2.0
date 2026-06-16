@@ -3,10 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cvData } from "@/data/cvData";
+import ProjectDetail from "./ProjectDetail";
 
 export default function Projects() {
   const [filter, setFilter] = useState("Tous");
-  
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  // Extraire les catégories uniques dynamiquement
   const categories = ["Tous", ...Array.from(new Set(cvData.projects.map(p => p.category)))];
 
   const filteredProjects = filter === "Tous" 
@@ -18,12 +21,12 @@ export default function Projects() {
       <motion.h2 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-12 tracking-tight"
+        className="text-4xl font-black text-white mb-12"
       >
         Mes Réalisations
       </motion.h2>
 
-      {/* Filtres avec animation */}
+      {/* Filtres */}
       <div className="flex gap-3 mb-12 overflow-x-auto pb-4 justify-center">
         {categories.map((cat) => (
           <button
@@ -40,7 +43,7 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Grille de projets avec animation de sortie/entrée */}
+      {/* Grille de projets */}
       <motion.div 
         layout
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full"
@@ -53,33 +56,34 @@ export default function Projects() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              className="group bg-gray-900/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:border-blue-500/50 transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)] flex flex-col"
+              onClick={() => setSelectedProject(project)}
+              className="cursor-pointer group bg-gray-900/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:border-blue-500/50 transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)] flex flex-col"
             >
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{project.name}</h3>
-              <p className="text-gray-400 text-sm mb-6 flex-grow">{project.description}</p>
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                {project.name}
+              </h3>
+              <p className="text-gray-400 text-sm mb-6 flex-grow">
+                {project.description}
+              </p>
               
               <div className="flex flex-wrap gap-2 mt-auto">
-                {project.tags.map(tag => (
+                {project.tags.map((tag: string) => (
                   <span key={tag} className="text-[10px] uppercase font-bold tracking-widest text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
                     {tag}
                   </span>
                 ))}
               </div>
               
-              {project.url !== "#" && (
-                <a 
-                  href={project.url} 
-                  target="_blank" 
-                  className="mt-6 text-blue-400 text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all"
-                >
-                  Détails <span>→</span>
-                </a>
-              )}
+              <div className="mt-6 text-blue-400 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                Voir les détails <span>→</span>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
       </motion.div>
+
+      {/* Modale de détails */}
+      <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />
     </div>
   );
 }
