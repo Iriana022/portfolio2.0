@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { cvData } from "@/data/cvData";
 
 export default function Projects() {
   const [filter, setFilter] = useState("Tous");
   
-  // Extraire les catégories uniques dynamiquement
   const categories = ["Tous", ...Array.from(new Set(cvData.projects.map(p => p.category)))];
 
   const filteredProjects = filter === "Tous" 
@@ -15,16 +15,24 @@ export default function Projects() {
 
   return (
     <div className="w-full py-20 px-6 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-white mb-8">Projets</h2>
+      <motion.h2 
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-12 tracking-tight"
+      >
+        Mes Réalisations
+      </motion.h2>
 
-      {/* Filtres */}
-      <div className="flex gap-2 mb-10 overflow-x-auto pb-2">
+      {/* Filtres avec animation */}
+      <div className="flex gap-3 mb-12 overflow-x-auto pb-4 justify-center">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-4 py-2 rounded-full border text-sm transition-all ${
-              filter === cat ? "bg-blue-600 border-blue-500 text-white" : "bg-gray-800 border-gray-700 text-gray-400"
+            className={`px-6 py-2 rounded-full border text-sm font-medium transition-all ${
+              filter === cat 
+                ? "bg-blue-600 border-blue-500 text-white shadow-[0_0_15px_rgba(37,99,235,0.5)]" 
+                : "bg-gray-800/50 border-white/10 text-gray-400 hover:border-blue-500/50"
             }`}
           >
             {cat}
@@ -32,28 +40,46 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Grille de projets */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
-        {filteredProjects.map((project, idx) => (
-          <div key={idx} className="bg-gray-900 border border-gray-800 p-6 rounded-xl hover:border-blue-500 transition-all flex flex-col">
-            <h3 className="text-xl font-bold text-white mb-2">{project.name}</h3>
-            <p className="text-gray-400 text-sm mb-4 flex-grow">{project.description}</p>
-            
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tags.map(tag => (
-                <span key={tag} className="text-[10px] uppercase tracking-wider text-blue-300 bg-blue-900/20 px-2 py-1 rounded">
-                  {tag}
-                </span>
-              ))}
-            </div>
-            
-            {project.url !== "#" && (
-              <a href={project.url} target="_blank" className="mt-4 text-blue-400 text-sm hover:underline">Voir le projet →</a>
-            )}
-          </div>
-        ))}
-      </div>
+      {/* Grille de projets avec animation de sortie/entrée */}
+      <motion.div 
+        layout
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full"
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, idx) => (
+            <motion.div 
+              key={project.name}
+              layout
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.3 }}
+              className="group bg-gray-900/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:border-blue-500/50 transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_-10px_rgba(59,130,246,0.3)] flex flex-col"
+            >
+              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{project.name}</h3>
+              <p className="text-gray-400 text-sm mb-6 flex-grow">{project.description}</p>
+              
+              <div className="flex flex-wrap gap-2 mt-auto">
+                {project.tags.map(tag => (
+                  <span key={tag} className="text-[10px] uppercase font-bold tracking-widest text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              {project.url !== "#" && (
+                <a 
+                  href={project.url} 
+                  target="_blank" 
+                  className="mt-6 text-blue-400 text-sm font-semibold flex items-center gap-1 hover:gap-2 transition-all"
+                >
+                  Détails <span>→</span>
+                </a>
+              )}
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 }
