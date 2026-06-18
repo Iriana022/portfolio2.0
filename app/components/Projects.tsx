@@ -38,7 +38,7 @@ export default function Projects() {
       </motion.h2>
 
       {/* Filtres */}
-      <div className="flex gap-3 mb-12 overflow-x-auto pb-4 justify-center">
+      <div className="flex flex-wrap gap-3 mb-12 overflow-x-auto pb-4 justify-center">
         {categories.map((cat) => (
           <button
             key={cat}

@@ -13,7 +13,7 @@ export default function PortfolioContent() {
   const [activeSection, setActiveSection] = useState('home')
 
   return (
-    <main className="bg-gray-900 min-h-screen text-white">
+    <main className="min-h-screen text-white bg-transparent">
       <Hero activeSection={activeSection} setActiveSection={setActiveSection} />
 
       <AnimatePresence mode="wait">

@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: transparent!important;
 }
 
 @theme inline {
@@ -24,7 +25,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: transparent!important; 
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

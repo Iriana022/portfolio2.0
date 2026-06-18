@@ -14,7 +14,7 @@ export default function Hero({ activeSection, setActiveSection }: { activeSectio
   ]
 
   return (
-    <div className="bg-gray-900">
+    <div className="">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8">
           <button onClick={() => setActiveSection('home')} className="flex items-center gap-2 group">
